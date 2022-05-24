@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/mengo-wordle/static/css/main.92c7cade.css",
+    "main.css": "/mengo-wordle/static/css/main.aa26f8ba.css",
     "main.js": "/mengo-wordle/static/js/main.fe2911ea.js",
     "static/js/787.b3f9d252.chunk.js": "/mengo-wordle/static/js/787.b3f9d252.chunk.js",
     "static/media/bg.jpg": "/mengo-wordle/static/media/bg.56b584c2b4024f5f3c2b.jpg",
     "index.html": "/mengo-wordle/index.html",
-    "main.92c7cade.css.map": "/mengo-wordle/static/css/main.92c7cade.css.map",
+    "main.aa26f8ba.css.map": "/mengo-wordle/static/css/main.aa26f8ba.css.map",
     "main.fe2911ea.js.map": "/mengo-wordle/static/js/main.fe2911ea.js.map",
     "787.b3f9d252.chunk.js.map": "/mengo-wordle/static/js/787.b3f9d252.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.92c7cade.css",
+    "static/css/main.aa26f8ba.css",
     "static/js/main.fe2911ea.js"
   ]
 }
