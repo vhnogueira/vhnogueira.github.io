@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/qual-jogador-vasco/static/css/main.ffb9b72c.css",
-    "main.js": "/qual-jogador-vasco/static/js/main.b67d6aa8.js",
+    "main.css": "/qual-jogador-vasco/static/css/main.511dc554.css",
+    "main.js": "/qual-jogador-vasco/static/js/main.f83955f7.js",
     "static/js/787.b3f9d252.chunk.js": "/qual-jogador-vasco/static/js/787.b3f9d252.chunk.js",
-    "static/media/bg.jpg": "/qual-jogador-vasco/static/media/bg.56b584c2b4024f5f3c2b.jpg",
+    "static/media/bg.jpg": "/qual-jogador-vasco/static/media/bg.53aba35152d18f1953a7.jpg",
     "index.html": "/qual-jogador-vasco/index.html",
-    "main.ffb9b72c.css.map": "/qual-jogador-vasco/static/css/main.ffb9b72c.css.map",
-    "main.b67d6aa8.js.map": "/qual-jogador-vasco/static/js/main.b67d6aa8.js.map",
+    "main.511dc554.css.map": "/qual-jogador-vasco/static/css/main.511dc554.css.map",
+    "main.f83955f7.js.map": "/qual-jogador-vasco/static/js/main.f83955f7.js.map",
     "787.b3f9d252.chunk.js.map": "/qual-jogador-vasco/static/js/787.b3f9d252.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ffb9b72c.css",
-    "static/js/main.b67d6aa8.js"
+    "static/css/main.511dc554.css",
+    "static/js/main.f83955f7.js"
   ]
 }
