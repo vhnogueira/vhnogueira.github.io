@@ -1,0 +1,26 @@
+.btn.active {
+  background: green;
+}
+
+body {
+/* body .container { */
+  font-family: 'Montserrat', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Times New Roman', sans-serif;
+  background-image: url('https://jumpfactor.net/wp-content/uploads/2015/07/logo-2.png');
+  background-repeat: no-repeat;
+  background-position: calc(100vw - 250px) 10px;
+  /* background-position: top right; */
+}
+
+button img {
+  max-height: 32px;
+}
+
+.btn-primary {
+  min-width: 200px;
+  min-height: 52px;
+}
+
+#game-2 img {
+  max-height: 300px;
+  width: auto;
+}

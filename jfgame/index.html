@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leader-line/1.0.3/leader-line.min.js"
+        integrity="sha512-aFBNsI3+D6ObLLtyKwdZPZzDbcCC6+Bh+2UNV8HC0R95BpcBT+dmmZ5NMpJi/Ic8uO0W7FGcg33IfuHg+7Ryew=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jumpfactor Game</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/custom.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/lekoala/bootstrap5-autocomplete@master/autocomplete.js"></script>
+
+</head>
+
+<body>
+
+
+    <div class="py-5">
+        <div class="container">
+
+            <h1 class="mb-3">
+                Jumpfactor Game
+            </h1>
+
+            <!-- <button id="start-timer" class="btn btn-sm btn-dark mb-3">Start Timer</button> -->
+
+            <div class="row mb-3 text-center">
+                <div class="col-md-auto">
+                    <button id="activate-team-1" class="btn btn-primary team-buttons mb-3" disabled>Team 1: <br><span
+                            id="team-1-score">0</span>
+                        points</button>
+                </div>
+                <div class="col-md-auto">
+                    <button id="activate-team-2" class="btn btn-primary team-buttons mb-3" disabled>Team 2: <br><span
+                            id="team-2-score">0</span>
+                        points</button>
+                </div>
+                <div class="col-md-auto">
+                    <button id="activate-team-3" class="btn btn-primary team-buttons mb-3" disabled>Team 3: <br><span
+                            id="team-3-score">0</span>
+                        points</button>
+                </div>
+                <div class="col-md-auto">
+                    <button id="activate-team-4" class="btn btn-primary team-buttons mb-3" disabled>Team 4: <br><span
+                            id="team-4-score">0</span>
+                        points</button>
+                </div>
+                <div class="col-md-auto">
+                    <button id="activate-team-5" class="btn btn-primary team-buttons mb-3" disabled>Team 5: <br><span
+                            id="team-5-score">0</span>
+                        points</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="row" id="game-3" style="display: none">
+                        <div class="col-md">
+                            <p id="instructions">
+                                Start selecting a flag on the left column.
+                            </p>
+                            <div class="row">
+                                <div class="col-md-6" id="leftColumn">
+                                    <button id="Afghanistan" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/Afghanistan.gif"></button>
+                                    <button id="Bahamas" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/Bahamas.gif"></button>
+                                    <button id="Côte d'Ivoire" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/Côte d'Ivoire.gif"></button>
+                                    <button id="Egypt" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/Egypt.gif"></button>
+                                    <button id="Turkey" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/Turkey.gif"></button>
+                                    <button id="Albania" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/Albania.gif"></button>
+                                    <button id="Chile" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/Chile.png"></button>
+                                    <button id="Germany" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/Germany.gif"></button>
+                                    <button id="Haiti" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/Haiti.gif"></button>
+                                    <button id="Pakistan" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/Pakistan.gif"></button>
+                                    <button id="Peru" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/Peru.gif"></button>
+                                    <button id="Philippines" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/Philippines.gif"></button>
+                                    <button id="United Kingdom" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/United Kingdom.gif"></button>
+                                    <button id="Ukraine" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/Ukraine.gif"></button>
+                                    <button id="Venezuela" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/Venezuela.gif"></button>
+                                    <button id="Argentina" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/Argentina.gif"></button>
+                                    <button id="Algeria" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/Algeria.gif"></button>
+                                    <button id="Brazil" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/Brazil.gif"></button>
+                                    <button id="India" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/India.png"></button>
+                                    <button id="Indonesia" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/Indonesia.gif"></button>
+                                    <button id="Australia" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/Australia.gif"></button>
+                                    <button id="Bangladesh" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/Bangladesh.gif"></button>
+                                    <button id="Belgium" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/Belgium.gif"></button>
+                                    <button id="Croatia" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/Croatia.gif"></button>
+                                    <button id="MissingCountry" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/MissingCountry.gif"></button>
+                                </div>
+                                <div class="col-md-6" id="rightColumn" style="display: none;">
+                                    <div class="team-inside">
+                                        <button id="rightButton1" data-correct-answer="Afghanistan"
+                                            class="btn btn-primary mb-3" style="display:none">Afghanistan</button>
+                                        <button id="rightButton2" data-correct-answer="Bahamas"
+                                            class="btn btn-primary mb-3" style="display:none">Bahamas</button>
+                                        <button id="rightButton3" data-correct-answer="Côte d'Ivoire"
+                                            class="btn btn-primary mb-3" style="display:none">Côte d'Ivoire</button>
+                                        <button id="rightButton4" data-correct-answer="Egypt"
+                                            class="btn btn-primary mb-3" style="display:none">Egypt</button>
+                                        <button id="rightButton5" data-correct-answer="Turkey"
+                                            class="btn btn-primary mb-3" style="display:none">Turkey</button>
+                                    </div>
+                                    <div class="team-inside">
+                                        <button id="rightButton6" data-correct-answer="Albania"
+                                            class="btn btn-primary mb-3" style="display:none">Albania</button>
+                                        <button id="rightButton7" data-correct-answer="Chile"
+                                            class="btn btn-primary mb-3" style="display:none">Chile</button>
+                                        <button id="rightButton8" data-correct-answer="Germany"
+                                            class="btn btn-primary mb-3" style="display:none">Germany</button>
+                                        <button id="rightButton9" data-correct-answer="Haiti"
+                                            class="btn btn-primary mb-3" style="display:none">Haiti</button>
+                                        <button id="rightButton10" data-correct-answer="Pakistan"
+                                            class="btn btn-primary mb-3" style="display:none">Pakistan</button>
+                                    </div>
+                                    <div class="team-inside">
+                                        <button id="rightButton11" data-correct-answer="Peru"
+                                            class="btn btn-primary mb-3" style="display:none">Peru</button>
+                                        <button id="rightButton12" data-correct-answer="Philippines"
+                                            class="btn btn-primary mb-3" style="display:none">Philippines</button>
+                                        <button id="rightButton13" data-correct-answer="United Kingdom"
+                                            class="btn btn-primary mb-3" style="display:none">United Kingdom</button>
+                                        <button id="rightButton14" data-correct-answer="Ukraine"
+                                            class="btn btn-primary mb-3" style="display:none">Ukraine</button>
+                                        <button id="rightButton15" data-correct-answer="Venezuela"
+                                            class="btn btn-primary mb-3" style="display:none">Venezuela</button>
+                                    </div>
+                                    <div class="team-inside">
+                                        <button id="rightButton16" data-correct-answer="Argentina"
+                                            class="btn btn-primary mb-3" style="display:none">Argentina</button>
+                                        <button id="rightButton17" data-correct-answer="Algeria"
+                                            class="btn btn-primary mb-3" style="display:none">Algeria</button>
+                                        <button id="rightButton18" data-correct-answer="Brazil"
+                                            class="btn btn-primary mb-3" style="display:none">Brazil</button>
+                                        <button id="rightButton19" data-correct-answer="India"
+                                            class="btn btn-primary mb-3" style="display:none">India</button>
+                                        <button id="rightButton20" data-correct-answer="Indonesia"
+                                            class="btn btn-primary mb-3" style="display:none">Indonesia</button>
+                                    </div>
+                                    <div class="team-inside">
+                                        <button id="rightButton21" data-correct-answer="Australia"
+                                            class="btn btn-primary mb-3" style="display:none">Australia</button>
+                                        <button id="rightButton22" data-correct-answer="Bangladesh"
+                                            class="btn btn-primary mb-3" style="display:none">Bangladesh</button>
+                                        <button id="rightButton23" data-correct-answer="Belgium"
+                                            class="btn btn-primary mb-3" style="display:none">Belgium</button>
+                                        <button id="rightButton24" data-correct-answer="Croatia"
+                                            class="btn btn-primary mb-3" style="display:none">Croatia</button>
+                                        <button id="rightButton25" data-correct-answer="MissingCountry"
+                                            class="btn btn-primary mb-3" style="display:none">MissingCountry</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 pt-4">
+                                <button class="btn-success btn" id="endGameButton" onclick="endGameValidator()">
+                                    Submit
+                                </button>
+                                <button class="btn-danger btn" id="endGameButton" onclick="resetRoundButton()">
+                                    Reset round
+                                </button>
+                                <button class="btn-outline-dark btn" id="secondGameButton" onclick="showSecondGame()">
+                                    < Show 3rd game
+                                </button>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <button class="btn-success btn btn-lg" id="endGameButton" onclick="finishGame()">
+                                    Finish Game!
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" id="game-2" style="display: none;">
+                        <div class="col-md-12">
+                            <div id="image-container"></div>
+
+
+                        </div>
+                        <div class="col-md-12 pt-4">
+                            <button class="btn-outline-dark btn" id="secondGameButton" onclick="showFirstGame()">
+                                < Show 1st game </button>
+                                    <button class="btn-outline-dark btn" id="secondGameButton"
+                                        onclick="showThirdGame()">
+                                        Show 3rd game >
+                                    </button>
+                        </div>
+                    </div>
+
+                    <div class="row" id="game-1">
+                        <div>
+                            <div id="question-container"></div>
+                        </div>
+                        <div class="col-md-12 pt-4">
+                            <button class="btn-outline-dark btn" id="secondGameButton" onclick="showSecondGame()">
+                                Show 2nd game ></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-dark" onclick="startTimer()">Start timer</button>
+                    <div id="timer" class="h2 mt-3"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.7/umd/popper.min.js"></script>
+    <script src="countries.js"></script>
+    <script src="guesses.js"></script>
+    <script src="game1.js"></script>
+    <script src="game2.js"></script>
+    <script src="game3.js"></script>
+
+    <script>
+        function handleTabChange(event) {
+            // Lógica da função quando a aba ativa é alterada
+            // console.log('Aba ativa alterada:', event.target.getAttribute('aria-controls'));
+            // Remover os atributos data-user-answer de todos os botões
+            const rightButtons = document.querySelectorAll("#rightColumn button");
+            rightButtons.forEach((button) => {
+                button.removeAttribute("data-user-answer");
+            });
+
+            // Ocultar todos os elementos da variável arrowsTest
+            for (const key in arrowsTest) {
+                if (arrowsTest.hasOwnProperty(key)) {
+                    arrowsTest[key].hide();
+                }
+            }
+
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var myTabs = document.getElementById('myTabs');
+            myTabs.addEventListener('shown.bs.tab', handleTabChange);
+        });
+    </script>
+
+</body>
+
+</html>

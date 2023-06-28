@@ -1,0 +1,17 @@
+let guesses = {
+  Iran: "./img/guesses/Iran.png",
+  Germany: "./img/guesses/Germany.png",
+  China: "./img/guesses/China.png",
+  Ukraine: "./img/guesses/Ukraine.png",
+  Peru: "./img/guesses/Peru.png",
+  Bosnia: "./img/guesses/Bosnia.png",
+  France: "./img/guesses/France.png",
+  Serbia: "./img/guesses/Serbia.png",
+  Turkey: "./img/guesses/Turkey.png",
+  Singapore: "./img/guesses/Singapore.png",
+  Madagascar: "./img/guesses/Madagascar.png",
+  "United Kingdom": "./img/guesses/United Kingdom.png",
+  Brazil: "./img/guesses/Brazil.png",
+  Portugal: "./img/guesses/Portugal.png",
+  Wales: "./img/guesses/Wales.png",
+};
