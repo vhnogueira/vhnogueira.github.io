@@ -12,10 +12,14 @@ body {
 }
 
 button img {
-  max-height: 32px;
+  max-height: 85px;
 }
 
-.btn-primary {
+#game-3 .btn-primary {
+  min-width: 250px;
+  min-height: 96px;
+}
+.team-buttons {
   min-width: 200px;
   min-height: 52px;
 }

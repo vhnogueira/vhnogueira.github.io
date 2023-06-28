@@ -53,11 +53,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (enteredText === correctText) {
           if (difficultyValue === 0) {
-            pointsToAdd = 10;
+            pointsToAdd = 1;
           } else if (difficultyValue === 1) {
-            pointsToAdd = 15;
+            pointsToAdd = 2;
           } else if (difficultyValue === 2) {
-            pointsToAdd = 20;
+            pointsToAdd = 3;
           }
 
           teamPoints[teamValue] += pointsToAdd;
