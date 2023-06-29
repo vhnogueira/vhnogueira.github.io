@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const correctAnswerIndex = currentQuestion.correctAnswer;
 
     if (selectedIndex === correctAnswerIndex) {
-      teamPoints[currentQuestion.team - 1]++;
+      teamPoints[currentQuestion.team - 1] += 3;
       alert("Correct answer!");
       // Increment the current question index
       atualizarScore();
