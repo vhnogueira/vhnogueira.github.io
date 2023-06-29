@@ -27,7 +27,7 @@ const questions = [
     question:
       "Which country in Latin America has the highest internet penetration rate, making it a promising market for B2B companies?",
     answers: ["a) Brazil", "b) Mexico", "c) Argentina", "d) Colombia"],
-    correctAnswer: 2,
+    correctAnswer: 1,
   },
   {
     team: 5,

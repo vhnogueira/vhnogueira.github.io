@@ -227,9 +227,12 @@
                     <!-- <button class="btn btn-dark" onclick="startTimer()">Start timer</button> -->
                     <div id="timer" class="h2 mt-3"></div>
                     <br>
-                    <button class="btn-success btn btn-lg" style="display: none;" id="endGameButton"
+                    <button class="btn-success btn btn-lg mb-3" style="display: none;" id="endGameButton"
                         onclick="finishGame()">
                         Finish Game!
+                    </button>
+                    <button class="btn-danger btn mb-3" data-bs-toggle="modal" data-bs-target="#resetModal">
+                        Reset Game
                     </button>
                 </div>
             </div>
@@ -237,6 +240,26 @@
         </div>
     </div>
 
+    <!-- Reset Game Modal -->
+    <div class="modal" id="resetModal" tabindex="-1" aria-labelledby="resetModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resetModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="resetModalText">Are you sure you want to reset this game? All scores will be 0 again.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-danger btn" id="resetGameButton" onclick="resetGame()">
+                        Reset Game
+                    </button>
+                    <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Game 2 Modal -->
     <div class="modal" id="game2Modal" tabindex="-1" aria-labelledby="game2ModalLabel" aria-hidden="true">
         <div class="modal-dialog">

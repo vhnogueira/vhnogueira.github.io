@@ -1,8 +1,6 @@
-window.onbeforeunload = confirmExit;
-function confirmExit() {
-  return "You have attempted to leave this page. Are you sure?";
-}
-
+// window.onbeforeunload = function () {
+//   return "Dude, are you sure you want to leave? Think of the kittens!";
+// };
 
 let game1CurrentIndex;
 

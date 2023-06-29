@@ -9,6 +9,47 @@ let arrowsArray = [];
 let teamActive;
 let teamPoints = [0, 0, 0, 0, 0]; // Inicializa o array de pontos das equipes com zeros
 
+function getCookie(name) {
+  var cookies = document.cookie.split("; ");
+  for (var i = 0; i < cookies.length; i++) {
+    var cookie = cookies[i].split("=");
+    if (cookie[0] === name) {
+      return cookie[1];
+    }
+  }
+  return null;
+}
+
+var teamPointsCookie = getCookie("teamPoints");
+
+if (teamPointsCookie) {
+  // Converte a string JSON de volta para um array
+  teamPoints = JSON.parse(teamPointsCookie);
+  atualizarScore();
+
+  // Use o array teamPoints conforme necessário
+  console.log(teamPoints);
+} else {
+  // O cookie "teamPoints" não existe
+  console.log("Cookie not found.");
+}
+
+function updateTeamPointsCookie() {
+  // Converte o array em uma string JSON
+  var teamPointsJSON = JSON.stringify(teamPoints);
+
+  // Define o cookie com a string JSON
+  document.cookie =
+    "teamPoints=" + teamPointsJSON + "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+}
+
+function atualizarScore() {
+  for (let i = 1; i <= 5; i++) {
+    document.getElementById(`team-${i}-score`).textContent = teamPoints[i - 1];
+  }
+  updateTeamPointsCookie();
+}
+
 function captureLeftButtonClick() {
   leftButtons.forEach((button) => {
     button.addEventListener("click", function (event) {
@@ -127,12 +168,6 @@ captureLeftButtonClick();
 captureRightButtonClick();
 renderRightColumn();
 
-function atualizarScore() {
-  for (let i = 1; i <= 5; i++) {
-    document.getElementById(`team-${i}-score`).textContent = teamPoints[i - 1];
-  }
-}
-
 function endGameValidator() {
   const instructions = document.getElementById("instructions");
 
@@ -228,7 +263,8 @@ function resetRoundButton() {
     activeButtons[j].classList.remove("active");
   }
   resetGame3();
-  startTimer();
+  timerElement.innerHTML = "";
+  startTimer(-10);
 }
 
 function resetGame3() {
@@ -288,6 +324,9 @@ function updateTimer() {
 
 // Function to start or restart the timer
 function startTimer(time = 60) {
+  if (time <= -2) {
+    timerElement.textContent = "";
+  }
   timeRemaining = time - 1;
   timerElement.textContent = "Timer: " + time + "s";
 
@@ -398,7 +437,6 @@ function showThirdGame() {
     button.disabled = false;
   });
 
-  stopTimer = true;
   timerElement.innerHTML = "";
 
   // Hide the element with id "game-1"
@@ -416,4 +454,11 @@ function showThirdGame() {
   // Show the end game button
   const endGameButton = document.getElementById("endGameButton");
   endGameButton.style.display = "block";
+}
+
+function resetGame() {
+  teamPoints = [0, 0, 0, 0, 0];
+  atualizarScore();
+  // Reloads the current page
+  location.reload();
 }
