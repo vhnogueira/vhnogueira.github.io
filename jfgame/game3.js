@@ -1,3 +1,4 @@
+const leftColumn = document.getElementById("leftColumn");
 const rightColumn = document.getElementById("rightColumn");
 const leftButtons = document.querySelectorAll("#leftColumn button");
 const rightButtons = [...rightColumn.querySelectorAll("button")];
@@ -28,9 +29,6 @@ function captureLeftButtonClick() {
 
 function captureRightButtonClick() {
   // Get all the buttons in the right column
-  const rightButtons = Array.from(
-    document.querySelectorAll("#rightColumn button")
-  );
 
   // Attach a click event listener to each button
   rightButtons.forEach((button) => {
@@ -137,9 +135,7 @@ function atualizarScore() {
 
 function endGameValidator() {
   const instructions = document.getElementById("instructions");
-  const rightButtons = Array.from(
-    document.querySelectorAll("#rightColumn button")
-  );
+
   let totalAnswers = 0;
   let correctAnswers = 0;
   let uniqueAnswers = new Set();
@@ -229,7 +225,7 @@ function resetRoundButton() {
   var activeButtons = document.querySelectorAll(".team-buttons.active");
 
   for (var j = 0; j < activeButtons.length; j++) {
-      activeButtons[j].classList.remove("active");
+    activeButtons[j].classList.remove("active");
   }
   resetGame3();
   startTimer();
@@ -237,14 +233,12 @@ function resetRoundButton() {
 
 function resetGame3() {
   // Remover os atributos data-user-answer de todos os botões
-  const leftButtons = document.querySelectorAll("#leftColumn button");
-  const rightButtons = document.querySelectorAll("#rightColumn button");
 
   leftButtons.forEach((button) => {
     button.classList.remove("active");
     button.style.display = "none";
   });
-  
+
   rightButtons.forEach((button) => {
     button.removeAttribute("data-user-answer");
     button.style.display = "none";
@@ -306,8 +300,9 @@ function startTimer(time = 60) {
   // Start the timer by updating it every second
   timerInterval = setInterval(() => {
     updateTimer();
-
-    if (timeRemaining <= 0) {
+    if (timeRemaining <= -2) {
+      timerElement.textContent = "";
+    } else if (timeRemaining <= 0) {
       // Time is up, clear the interval
       clearInterval(timerInterval);
       timerElement.textContent = "Time Up!";
@@ -323,8 +318,6 @@ function startTimer(time = 60) {
 
 teamButtonTrigger();
 displayButtonsFromTeam();
-
-
 
 function findTeamsWithMaxPoints(teamPoints) {
   const maxPoints = Math.max(...teamPoints);
@@ -398,11 +391,16 @@ function showSecondGame() {
   });
 }
 function showThirdGame() {
+  startTimer(-10);
+
   const buttons = document.querySelectorAll("button.team-buttons");
   buttons.forEach((button) => {
     button.disabled = false;
   });
-  startTimer(0);
+
+  stopTimer = true;
+  timerElement.innerHTML = "";
+
   // Hide the element with id "game-1"
   const game1Element = document.getElementById("game-1");
   game1Element.style.display = "none";

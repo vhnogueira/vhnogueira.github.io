@@ -189,8 +189,8 @@
                                 </button>
                                 <button class="btn-outline-dark btn" id="secondGameButton" onclick="showSecondGame()">
                                     < Show 3rd game </button>
-                                
-                                       
+
+
                             </div>
                         </div>
                     </div>
@@ -205,7 +205,7 @@
                             <button class="btn-outline-dark btn" id="secondGameButton" onclick="showSecondGame()">
                                 Show 2nd game >
                             </button>
-                            
+
                         </div>
                     </div>
 
@@ -216,9 +216,10 @@
                         <div class="col-md-12 pt-4">
                             <button class="btn-outline-dark btn" id="secondGameButton" onclick="showFirstGame()">
                                 < Show 1st game </button>
-                            <button class="btn-outline-dark btn" id="secondGameButton" onclick="showThirdGame()">
-                                Show 3rd game >
-                            </button>
+                                    <button class="btn-outline-dark btn" id="secondGameButton"
+                                        onclick="showThirdGame()">
+                                        Show 3rd game >
+                                    </button>
                         </div>
                     </div>
                 </div>
@@ -226,7 +227,8 @@
                     <!-- <button class="btn btn-dark" onclick="startTimer()">Start timer</button> -->
                     <div id="timer" class="h2 mt-3"></div>
                     <br>
-                    <button class="btn-success btn btn-lg" style="display: none;" id="endGameButton" onclick="finishGame()">
+                    <button class="btn-success btn btn-lg" style="display: none;" id="endGameButton"
+                        onclick="finishGame()">
                         Finish Game!
                     </button>
                 </div>
@@ -235,13 +237,34 @@
         </div>
     </div>
 
+    <!-- Game 2 Modal -->
+    <div class="modal" id="game2Modal" tabindex="-1" aria-labelledby="game2ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="game2ModalLabel"></h5>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
+                <div class="modal-body">
+                    <p id="game2ModalText"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="goToNextQuestionBtn"
+                        onclick="btnNextQuestionGame2()">Go to the next question</button>
+                    <button type="button" class="btn btn-primary" style="display: none;" id="goToGame3ModalBtn"
+                        onclick="showThirdGameModal()">Go to 3rd game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.7/umd/popper.min.js"></script>
     <script src="countries.js"></script>
     <script src="guesses.js"></script>
+    <script src="game3.js"></script>
     <script src="game1.js"></script>
     <script src="game2.js"></script>
-    <script src="game3.js"></script>
 
     <script>
         function handleTabChange(event) {
