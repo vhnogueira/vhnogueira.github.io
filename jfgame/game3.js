@@ -294,6 +294,7 @@ function updateTimer() {
 
 // Function to start or restart the timer
 function startTimer(time = 60) {
+  timeRemaining = time - 1;
   timerElement.textContent = "Timer: " + time + "s";
 
   if (timerInterval) {
@@ -323,6 +324,35 @@ function startTimer(time = 60) {
 teamButtonTrigger();
 displayButtonsFromTeam();
 
+
+
+function findTeamsWithMaxPoints(teamPoints) {
+  const maxPoints = Math.max(...teamPoints);
+  const teamsWithMaxPoints = [];
+
+  for (let i = 0; i < teamPoints.length; i++) {
+    if (teamPoints[i] === maxPoints) {
+      teamsWithMaxPoints.push(i + 1);
+    }
+  }
+
+  return teamsWithMaxPoints;
+}
+
+function finishGame() {
+  const teamsWithMaxPoints = findTeamsWithMaxPoints(teamPoints);
+
+  if (teamsWithMaxPoints.length === 1) {
+    // Apenas uma equipe tem a pontuação máxima, essa é a vencedora
+    const winningTeam = teamsWithMaxPoints[0];
+    alert("Game is finished! Winner is Team " + winningTeam);
+  } else {
+    // Mais de uma equipe tem a pontuação máxima, é um empate
+    const teamsString = teamsWithMaxPoints.join(", ");
+    alert("Game is finished! It's a tie between Teams " + teamsString);
+  }
+}
+
 function showFirstGame() {
   // Hide the element with id "game-1"
   const game1Element = document.getElementById("game-1");
@@ -335,12 +365,10 @@ function showFirstGame() {
   // Show the element with id "game-3"
   const game3Element = document.getElementById("game-3");
   game3Element.style.display = "none";
-
-  
 }
 function showSecondGame() {
   resetGame3();
-  startTimer();
+  startTimer(30);
 
   // Hide the element with id "game-1"
   const game1Element = document.getElementById("game-1");
@@ -377,31 +405,4 @@ function showThirdGame() {
   // Show the element with id "game-3"
   const game3Element = document.getElementById("game-3");
   game3Element.style.display = "block";
-}
-
-function findTeamsWithMaxPoints(teamPoints) {
-  const maxPoints = Math.max(...teamPoints);
-  const teamsWithMaxPoints = [];
-
-  for (let i = 0; i < teamPoints.length; i++) {
-    if (teamPoints[i] === maxPoints) {
-      teamsWithMaxPoints.push(i + 1);
-    }
-  }
-
-  return teamsWithMaxPoints;
-}
-
-function finishGame() {
-  const teamsWithMaxPoints = findTeamsWithMaxPoints(teamPoints);
-
-  if (teamsWithMaxPoints.length === 1) {
-    // Apenas uma equipe tem a pontuação máxima, essa é a vencedora
-    const winningTeam = teamsWithMaxPoints[0];
-    alert("Game is finished! Winner is Team " + winningTeam);
-  } else {
-    // Mais de uma equipe tem a pontuação máxima, é um empate
-    const teamsString = teamsWithMaxPoints.join(", ");
-    alert("Game is finished! It's a tie between Teams " + teamsString);
-  }
 }

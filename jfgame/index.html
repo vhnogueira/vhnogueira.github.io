@@ -188,47 +188,48 @@
                                     Reset round
                                 </button>
                                 <button class="btn-outline-dark btn" id="secondGameButton" onclick="showSecondGame()">
-                                    < Show 3rd game
-                                </button>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <button class="btn-success btn btn-lg" id="endGameButton" onclick="finishGame()">
-                                    Finish Game!
-                                </button>
+                                    < Show 3rd game </button>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <button class="btn-success btn btn-lg" id="endGameButton"
+                                            onclick="finishGame()">
+                                            Finish Game!
+                                        </button>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row" id="game-2" style="display: none;">
+                    <div class="row" id="game-1">
                         <div class="col-md-12">
                             <div id="image-container"></div>
 
 
                         </div>
                         <div class="col-md-12 pt-4">
-                            <button class="btn-outline-dark btn" id="secondGameButton" onclick="showFirstGame()">
-                                < Show 1st game </button>
-                                    <button class="btn-outline-dark btn" id="secondGameButton"
-                                        onclick="showThirdGame()">
-                                        Show 3rd game >
-                                    </button>
+                            <button class="btn-outline-dark btn" id="secondGameButton" onclick="showSecondGame()">
+                                Show 2nd game >
+                            </button>
+                            
                         </div>
                     </div>
 
-                    <div class="row" id="game-1">
+                    <div class="row" id="game-2" style="display: none;">
                         <div>
                             <div id="question-container"></div>
                         </div>
                         <div class="col-md-12 pt-4">
-                            <button class="btn-outline-dark btn" id="secondGameButton" onclick="showSecondGame()">
-                                Show 2nd game ></button>
+                            <button class="btn-outline-dark btn" id="secondGameButton" onclick="showFirstGame()">
+                                < Show 1st game </button>
+                            <button class="btn-outline-dark btn" id="secondGameButton" onclick="showThirdGame()">
+                                Show 3rd game >
+                            </button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-2">
-                    <button class="btn btn-dark" onclick="startTimer()">Start timer</button>
+                    <!-- <button class="btn btn-dark" onclick="startTimer()">Start timer</button> -->
                     <div id="timer" class="h2 mt-3"></div>
                 </div>
             </div>
