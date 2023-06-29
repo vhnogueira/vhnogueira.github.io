@@ -45,9 +45,13 @@ const questions = [
 
 let currentQuestionIndex = 0;
 
-function createQuestionElement(question, answers) {
+function createQuestionElement(question, answers, team) {
   const questionElement = document.createElement("div");
   questionElement.classList.add("question");
+
+  const questionTextHeading = document.createElement("h3");
+  questionTextHeading.textContent = "Question for Team " + team;
+  questionElement.appendChild(questionTextHeading);
 
   const questionTextElement = document.createElement("p");
   questionTextElement.textContent = question;
@@ -91,9 +95,11 @@ function handleAnswerClick(selectedIndex) {
   if (selectedIndex === correctAnswerIndex) {
     teamPoints[currentQuestion.team - 1] += 3;
     atualizarScore();
+    showCorrectAnswerIcons();
     openModalGame2("Correct answer!", "+3 points!");
     // Increment the current question index
   } else {
+    showWrongAnswerIcons();
     openModalGame2(
       "Oops, wrong answer!",
       "The correct answer is " + currentQuestion.answers[correctAnswerIndex]
@@ -115,7 +121,7 @@ function btnNextQuestionGame2() {
     renderQuestion(currentQuestionIndex);
     startTimer(30);
   } else {
-    document.getElementById("goToNextQuestionBtn").style.display = "none";
+    document.getElementById("goToNextQuestionBtnGame2").style.display = "none";
     document.getElementById("goToGame3ModalBtn").style.display = "block";
     openModalGame2(
       "All questions done!",
@@ -129,7 +135,8 @@ function renderQuestion(questionIndex) {
   const question = questions[questionIndex];
   const questionElement = createQuestionElement(
     question.question,
-    question.answers
+    question.answers,
+    question.team
   );
   questionContainer.appendChild(questionElement);
 }

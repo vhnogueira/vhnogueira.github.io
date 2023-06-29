@@ -8,15 +8,21 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Jumpfactor Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.css"
+        integrity="sha512-JcmylNmvdZJ8UcYcSDFWhvE6DwI8bKcnPKvBlwU2w/aRJ6qiZErv1Ixq99ykZgy3cCSp+QJp9su5buNLQjytng=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="./css/custom.css">
 
-    <script src="https://cdn.jsdelivr.net/gh/lekoala/bootstrap5-autocomplete@master/autocomplete.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.min.js"
+        integrity="sha512-HcBl0GSJvt4Qecm4srHapirUx0HJDi2zYXm6KUKNNUGdTIN9cBwakVZHWmRVj4MKgy1AChqhWGYcMDbRKgO0zg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
 
 </head>
 
 <body>
-
 
     <div class="py-5">
         <div class="container">
@@ -60,7 +66,7 @@
                     <div class="row" id="game-3" style="display: none">
                         <div class="col-md">
                             <p id="instructions">
-                                Start selecting a flag on the left column.
+                                Start selecting a team on the top.
                             </p>
                             <div class="row">
                                 <div class="col-md-6" id="leftColumn">
@@ -188,7 +194,7 @@
                                     Reset round
                                 </button>
                                 <button class="btn-outline-dark btn" id="secondGameButton" onclick="showSecondGame()">
-                                    < Show 3rd game </button>
+                                    < Show 2nd game </button>
 
 
                             </div>
@@ -216,6 +222,7 @@
                         <div class="col-md-12 pt-4">
                             <button class="btn-outline-dark btn" id="secondGameButton" onclick="showFirstGame()">
                                 < Show 1st game </button>
+
                                     <button class="btn-outline-dark btn" id="secondGameButton"
                                         onclick="showThirdGame()">
                                         Show 3rd game >
@@ -244,35 +251,73 @@
     <div class="modal" id="resetModal" tabindex="-1" aria-labelledby="resetModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
+                <!-- <div class="modal-header">
                     <h5 class="modal-title" id="resetModalLabel"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p id="resetModalText">Are you sure you want to reset this game? All scores will be 0 again.</p>
+                </div> -->
+                <div class="modal-body pt-5">
+                    <p id="resetModalText">Are you sure you want to reset this game? <br>
+                        All scores will be 0 again.</p>
                 </div>
                 <div class="modal-footer">
                     <button class="btn-danger btn" id="resetGameButton" onclick="resetGame()">
                         Reset Game
                     </button>
-                    <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                    <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal"
+                        aria-label="Close">Cancel</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Game 1 Modal -->
+    <div class="modal" id="game1Modal" tabindex="-1" aria-labelledby="game1ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body text-center">
+                    <lord-icon class="wrong-answer-modal" src="https://cdn.lordicon.com/wwneckwc.json" trigger="loop"
+                        delay="500" colors="primary:#3a3347,secondary:#f9c9c0"
+                        style="display:none;width:150px;height:150px">
+                    </lord-icon>
+                    <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                    <lord-icon class="correct-answer-modal" src="https://cdn.lordicon.com/tqywkdcz.json" trigger="hover"
+                        colors="primary:#4bb3fd,secondary:#f28ba8,tertiary:#ffc738,quaternary:#f24c00"
+                        style="display:none;width:150px;height:150px">
+                    </lord-icon>
+                    <h5 class="modal-title mb-3 mt-3" id="game1ModalLabel"></h5>
+                    <p id="game1ModalText"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="goToNextQuestionBtnGame1"
+                        onclick="btnNextQuestionGame1()">Go to the next question</button>
+                    <button type="button" class="btn btn-primary" style="display: none;" id="goToGame2ModalBtn"
+                        onclick="showSecondGameModal()">Go to 2nd game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Game 2 Modal -->
     <div class="modal" id="game2Modal" tabindex="-1" aria-labelledby="game2ModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="game2ModalLabel"></h5>
-                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-                </div>
-                <div class="modal-body">
+
+                <div class="modal-body text-center">
+                    <lord-icon class="wrong-answer-modal" src="https://cdn.lordicon.com/wwneckwc.json" trigger="loop"
+                        delay="500" colors="primary:#3a3347,secondary:#f9c9c0"
+                        style="display:none;width:150px;height:150px">
+                    </lord-icon>
+                    <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                    <lord-icon class="correct-answer-modal" src="https://cdn.lordicon.com/tqywkdcz.json" trigger="hover"
+                        colors="primary:#4bb3fd,secondary:#f28ba8,tertiary:#ffc738,quaternary:#f24c00"
+                        style="display:none;width:150px;height:150px">
+                    </lord-icon>
+                    <h5 class="modal-title mb-3 mt-3" id="game2ModalLabel"></h5>
                     <p id="game2ModalText"></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="goToNextQuestionBtn"
+                    <button type="button" class="btn btn-primary" id="goToNextQuestionBtnGame2"
                         onclick="btnNextQuestionGame2()">Go to the next question</button>
                     <button type="button" class="btn btn-primary" style="display: none;" id="goToGame3ModalBtn"
                         onclick="showThirdGameModal()">Go to 3rd game</button>
@@ -288,31 +333,6 @@
     <script src="game3.js"></script>
     <script src="game1.js"></script>
     <script src="game2.js"></script>
-
-    <script>
-        function handleTabChange(event) {
-            // Lógica da função quando a aba ativa é alterada
-            // console.log('Aba ativa alterada:', event.target.getAttribute('aria-controls'));
-            // Remover os atributos data-user-answer de todos os botões
-            const rightButtons = document.querySelectorAll("#rightColumn button");
-            rightButtons.forEach((button) => {
-                button.removeAttribute("data-user-answer");
-            });
-
-            // Ocultar todos os elementos da variável arrowsTest
-            for (const key in arrowsTest) {
-                if (arrowsTest.hasOwnProperty(key)) {
-                    arrowsTest[key].hide();
-                }
-            }
-
-        }
-
-        document.addEventListener('DOMContentLoaded', function () {
-            var myTabs = document.getElementById('myTabs');
-            myTabs.addEventListener('shown.bs.tab', handleTabChange);
-        });
-    </script>
 
 </body>
 

@@ -263,8 +263,8 @@ function resetRoundButton() {
     activeButtons[j].classList.remove("active");
   }
   resetGame3();
-  timerElement.innerHTML = "";
   startTimer(-10);
+  timerElement.innerHTML = "";
 }
 
 function resetGame3() {
@@ -283,9 +283,24 @@ function resetGame3() {
   // Ocultar todos os elementos da variável arrowsArray
   hideAllArrows();
   document.getElementById("instructions").innerText =
-    "Start selecting a flag on the left column.";
+    "Start selecting a team at the top.";
   leftButtonClicked = "";
 }
+
+// Obtém a referência para os botões de equipe
+var teamButtons = document.querySelectorAll('.team-buttons');
+
+// Função de manipulação de clique para os botões de equipe
+function handleTeamButtonClick() {
+  // Atualiza o texto do elemento #instructions
+  document.getElementById('instructions').innerText = "Start selecting a flag on the left column.";
+}
+
+// Adiciona o evento de clique a cada botão de equipe
+teamButtons.forEach(function(button) {
+  button.addEventListener('click', handleTeamButtonClick);
+});
+
 
 function displayButtonsFromTeam() {
   // Ocultar todos os botões inicialmente
