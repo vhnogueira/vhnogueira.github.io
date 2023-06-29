@@ -72,7 +72,7 @@ for (let i = 0; i < difficultyLevels.length; i++) {
       if (game1CurrentIndex < 9) {
         startTimer(30);
       } else {
-        startTimer(60);
+        startTimer(30);
       }
       // Hide current container
       container.style.display = "none";
