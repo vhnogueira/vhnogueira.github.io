@@ -1,8 +1,11 @@
+let game1CurrentIndex;
+
 document.addEventListener("DOMContentLoaded", function () {
+  startTimer(30);
   const imageContainer = document.getElementById("image-container");
   const difficultyLevels = ["Easy", "Medium", "Hard"];
   const teams = [0, 1, 2, 3, 4];
-  let currentIndex = 0;
+  game1CurrentIndex = 0;
 
   for (let i = 0; i < difficultyLevels.length; i++) {
     const difficultyLevel = difficultyLevels[i];
@@ -66,14 +69,18 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           alert("Incorrect!");
         }
-
+        if (game1CurrentIndex < 9) {
+          startTimer(30);
+        } else {
+          startTimer(60);
+        }
         // Hide current container
         container.style.display = "none";
 
         // Show next container
-        currentIndex++;
-        if (currentIndex < difficultyLevels.length * teams.length) {
-          const nextContainer = imageContainer.children[currentIndex];
+        game1CurrentIndex++;
+        if (game1CurrentIndex < difficultyLevels.length * teams.length) {
+          const nextContainer = imageContainer.children[game1CurrentIndex];
           nextContainer.style.display = "block";
         } else {
           // Handle end of containers

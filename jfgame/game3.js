@@ -354,6 +354,11 @@ function finishGame() {
 }
 
 function showFirstGame() {
+  if (game1CurrentIndex < 9) {
+    startTimer(30);
+  } else {
+    startTimer(60);
+  }
   // Hide the element with id "game-1"
   const game1Element = document.getElementById("game-1");
   game1Element.style.display = "block";
@@ -382,6 +387,10 @@ function showSecondGame() {
   const game3Element = document.getElementById("game-3");
   game3Element.style.display = "none";
 
+  // Hide the end game button
+  const endGameButton = document.getElementById("endGameButton");
+  endGameButton.style.display = "none";
+
   const buttons = document.querySelectorAll("button.team-buttons");
   buttons.forEach((button) => {
     button.disabled = true;
@@ -393,7 +402,7 @@ function showThirdGame() {
   buttons.forEach((button) => {
     button.disabled = false;
   });
-  // startTimer();
+  startTimer(0);
   // Hide the element with id "game-1"
   const game1Element = document.getElementById("game-1");
   game1Element.style.display = "none";
@@ -405,4 +414,8 @@ function showThirdGame() {
   // Show the element with id "game-3"
   const game3Element = document.getElementById("game-3");
   game3Element.style.display = "block";
+
+  // Show the end game button
+  const endGameButton = document.getElementById("endGameButton");
+  endGameButton.style.display = "block";
 }

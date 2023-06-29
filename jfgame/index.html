@@ -112,8 +112,8 @@
                                             src="./img/countries/Belgium.gif"></button>
                                     <button id="Croatia" class="btn btn-primary mb-3" style="display:none"><img
                                             src="./img/countries/Croatia.gif"></button>
-                                    <button id="MissingCountry" class="btn btn-primary mb-3" style="display:none"><img
-                                            src="./img/countries/MissingCountry.gif"></button>
+                                    <button id="Nicaragua" class="btn btn-primary mb-3" style="display:none"><img
+                                            src="./img/countries/Nicaragua.png"></button>
                                 </div>
                                 <div class="col-md-6" id="rightColumn" style="display: none;">
                                     <div class="team-inside">
@@ -173,30 +173,24 @@
                                             class="btn btn-primary mb-3" style="display:none">Belgium</button>
                                         <button id="rightButton24" data-correct-answer="Croatia"
                                             class="btn btn-primary mb-3" style="display:none">Croatia</button>
-                                        <button id="rightButton25" data-correct-answer="MissingCountry"
-                                            class="btn btn-primary mb-3" style="display:none">MissingCountry</button>
+                                        <button id="rightButton25" data-correct-answer="Nicaragua"
+                                            class="btn btn-primary mb-3" style="display:none">Nicaragua</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12 pt-4">
-                                <button class="btn-success btn" id="endGameButton" onclick="endGameValidator()">
+                                <button class="btn-success btn" id="endRoundButton" onclick="endGameValidator()">
                                     Submit
                                 </button>
-                                <button class="btn-danger btn" id="endGameButton" onclick="resetRoundButton()">
+                                <button class="btn-danger btn" id="resetRoundButton" onclick="resetRoundButton()">
                                     Reset round
                                 </button>
                                 <button class="btn-outline-dark btn" id="secondGameButton" onclick="showSecondGame()">
                                     < Show 3rd game </button>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <button class="btn-success btn btn-lg" id="endGameButton"
-                                            onclick="finishGame()">
-                                            Finish Game!
-                                        </button>
+                                
+                                       
                             </div>
                         </div>
                     </div>
@@ -231,6 +225,10 @@
                 <div class="col-md-2">
                     <!-- <button class="btn btn-dark" onclick="startTimer()">Start timer</button> -->
                     <div id="timer" class="h2 mt-3"></div>
+                    <br>
+                    <button class="btn-success btn btn-lg" style="display: none;" id="endGameButton" onclick="finishGame()">
+                        Finish Game!
+                    </button>
                 </div>
             </div>
 
