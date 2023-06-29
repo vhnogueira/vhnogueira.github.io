@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JF Questions - Event</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container pt-5">
+        <p><strong>WELCOME TO THE JUMPFACTOR GET TO KNOW ME GAME!!! A game with a set of questions to learn more about each
+                other's cultures and places of origin 🙂</strong></p>
+        <p><strong>LET&rsquo;S PLAY!!</strong></p>
+        <p><span style="text-decoration: underline;"><strong>Instructions:</strong></span></p>
+        <p>Allow for one person to share their screen with the GAME LINK open.</p>
+        <p>Each person will answer the question that pops up on the screen (in as much detail as they are comfortable with).
+        </p>
+        <p>Once you are done press shuffle and, simply move on to the next person to answer the next question.</p>
+        <p>If you are not comfortable answering a question OR you have already answered it, simply shuffle to the next
+            question until you find a question you would like to answer.</p>
+        <p>Keep going until you run out of time.</p>
+    
+        <button onclick="shuffleQuestion()" class="btn btn-primary mt-3">Shuffle</button>
+        <br>
+        <br>
+    
+        <p id="question" class="fs-4 fw-bold"></p>
+    
+    </div>
+
+    <script>
+        const questions = [
+                "How would you describe your cultural identity or ethnicity?",
+                "What spiritual or religious beliefs are important to you and your family, and how are they practiced in your day-to-day life?",
+                "Do you belong to a group of people that you consider to be different than others where you come from?",
+                "Do you still live in your country of origin? If yes, for how long? If not, when did you or your ancestors decide to move?",
+                "Tell your opponents a little bit about the area you live in. What is the community like? What is nearby?",
+                "What family traditions/celebrations did you have growing up?",
+                "Describe the traditional way that people in your culture dress for regular and special occasions.",
+                "What languages do you speak? Is it your first language? If not, what is your first language?",
+                "What are the three most important things that people should know about your culture?",
+                "What is a unique belief that people from your community have?",
+                "What do you consider to be traditional music where you are from?",
+                "What types of foods were cooked for special occasions when you were growing up? What is your favorite?",
+                "How do you think your culture has influenced your personal values and beliefs?",
+                "Where did people go when they traveled when they were younger?",
+                "Do you think there’s something unique or special about your culture that people may not know?",
+                "What would you say is the most commonly held misconception about people of your culture?",
+                "Are there any significant pieces of Arts and Literature that are related to your culture that you know about or have in your home?",
+                "What traditions do you want to keep alive as an adult? Do you have any plans to do so?",
+                "Does your family have any superstitions that they passed down? Do you believe in them?",
+                "Where were you born, and have you lived there your whole life?",
+                "Are there any particular cultural traditions or customs that you practice or celebrate?",
+                "Have you traveled to different countries or experienced different cultures? Which ones were most memorable to you?",
+                "Are there any cultural or ethnic festivals that you look forward to each year?",
+                "How important is your cultural or ethnic identity to you? Are there specific ways you express or embrace it?",
+                "Are there any stereotypes or misconceptions about your culture or ethnicity that you'd like to address?",
+                "Are there any cultural norms or communication styles from your background that you find valuable or important?",
+                "What are some popular forms of entertainment or media from your culture that you enjoy?",
+                "Are there any historical figures or events from your country or culture that you find inspiring?",
+                "Do you have any favorite books, movies, or music that reflect your cultural or ethnic background?",
+                "How does your cultural background influence your perspectives on family and relationships?",
+                "Are there any cultural proverbs, sayings, or quotes from your background that resonate with you?",
+                "Have you faced any challenges or experiences related to your nationality when living or working in a different country?",
+                "Do you have any unique or interesting stories about your family's history or migration?",
+                "Have you ever participated in or observed any traditional ceremonies or rituals? What was the experience like?",
+                "Are there any cultural values or beliefs from your background that have shaped your personal or professional life?",
+                "Is there anything else you'd like to share about your cultural or ethnic background that you think would be valuable for others to know?",
+            ];
+
+            function shuffleQuestion() {
+                var randomIndex = Math.floor(Math.random() * questions.length);
+                document.getElementById("question").innerHTML = questions[randomIndex];
+            }
+            shuffleQuestion();
+    </script>
+    
+</body>
+</html>
