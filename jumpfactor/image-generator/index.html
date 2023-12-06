@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container py-5">
+        <h1 class="mb-4">Image Generator</h1>
+
+        <label for="phrase1" class="form-label">Phrase 1:</label>
+        <input type="text" class="form-control mb-3" id="phrase1" placeholder="Enter Phrase 1">
+
+        <label for="phrase2" class="form-label">Phrase 2:</label>
+        <input type="text" class="form-control mb-3" id="phrase2" placeholder="Enter Phrase 2">
+
+        <label for="phrase3" class="form-label">Phrase 3:</label>
+        <input type="text" class="form-control mb-3" id="phrase3" placeholder="Enter Phrase 3">
+
+        <label for="phrase4" class="form-label">Phrase 4:</label>
+        <input type="text" class="form-control mb-3" id="phrase4" placeholder="Enter Phrase 4">
+
+        <button class="btn btn-primary" onclick="generateImages()">Generate Images</button>
+    </div>
+
+    <script>
+        async function generateImages() {
+            var randomNumbers = [];
+            while (randomNumbers.length < 4) {
+                var number = Math.floor(Math.random() * 44) + 1;
+                if (randomNumbers.indexOf(number) === -1) {
+                    randomNumbers.push(number);
+                }
+            }
+
+            var phrases = [
+                document.getElementById('phrase1').value.trim(),
+                document.getElementById('phrase2').value.trim(),
+                document.getElementById('phrase3').value.trim(),
+                document.getElementById('phrase4').value.trim()
+            ];
+
+            function loadImage(url, fileName, alt) {
+                return new Promise((resolve) => {
+                    var img = new Image();
+                    img.crossOrigin = "anonymous";
+                    img.alt = alt;
+                    img.onload = function () {
+                        var canvas = document.createElement('canvas');
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        var ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0);
+                        var dataURL = canvas.toDataURL('image/jpeg');
+                        var a = document.createElement('a');
+                        a.href = dataURL;
+                        a.download = fileName;
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        resolve();
+                    };
+                    img.src = url;
+                });
+            }
+
+            for (var i = 0; i < 4; i++) {
+                if (phrases[i] !== '') {
+                    var number = randomNumbers[i];
+                    var url = 'img/Silolift Image (' + number + ').jpg';
+                    var fileName = phrases[i] + '.jpg';
+                    var alt = phrases[i];
+                    await loadImage(url, fileName, alt);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
