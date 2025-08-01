@@ -1,0 +1,285 @@
+@import "tailwindcss";
+
+/* 
+npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
+ */
+
+/* Design System Colors */
+@layer utilities {
+  /* Primary Colors */
+  .bg-ds-red { @apply bg-[#E64B00]; }
+  .text-ds-red { @apply text-[#E64B00]; }
+  .border-ds-red { @apply border-[#E64B00]; }
+
+  .bg-ds-dark-orange { @apply bg-[#F57A20]; }
+  .text-ds-dark-orange { @apply text-[#F57A20]; }
+  .border-ds-dark-orange { @apply border-[#F57A20]; }
+
+  .bg-ds-light-orange { @apply bg-[#F59B43]; }
+  .text-ds-light-orange { @apply text-[#F59B43]; }
+  .border-ds-light-orange { @apply border-[#F59B43]; }
+
+  .bg-ds-dark-yellow { @apply bg-[#F5BC6F]; }
+  .text-ds-dark-yellow { @apply text-[#F5BC6F]; }
+  .border-ds-dark-yellow { @apply border-[#F5BC6F]; }
+
+  .bg-ds-light-yellow { @apply bg-[#F5D4A5]; }
+  .text-ds-light-yellow { @apply text-[#F5D4A5]; }
+  .border-ds-light-yellow { @apply border-[#F5D4A5]; }
+
+  .bg-ds-beige { @apply bg-[#F2DFD4]; }
+  .text-ds-beige { @apply text-[#F2DFD4]; }
+  .border-ds-beige { @apply border-[#F2DFD4]; }
+
+  /* Blues */
+  .bg-ds-dark-blue { @apply bg-[#1B83DB]; }
+  .text-ds-dark-blue { @apply text-[#1B83DB]; }
+  .border-ds-dark-blue { @apply border-[#1B83DB]; }
+
+  .bg-ds-light-blue { @apply bg-[#3AA2DC]; }
+  .text-ds-light-blue { @apply text-[#3AA2DC]; }
+  .border-ds-light-blue { @apply border-[#3AA2DC]; }
+
+  .bg-ds-dark-torquoise { @apply bg-[#61BADB]; }
+  .text-ds-dark-torquoise { @apply text-[#61BADB]; }
+  .border-ds-dark-torquoise { @apply border-[#61BADB]; }
+
+  .bg-ds-light-torquoise { @apply bg-[#8ACADA]; }
+  .text-ds-light-torquoise { @apply text-[#8ACADA]; }
+  .border-ds-light-torquoise { @apply border-[#8ACADA]; }
+
+  .bg-ds-lightest-blue { @apply bg-[#C5DEF5]; }
+  .text-ds-lightest-blue { @apply text-[#C5DEF5]; }
+  .border-ds-lightest-blue { @apply border-[#C5DEF5]; }
+
+  /* Neutrals */
+  .bg-ds-black { @apply bg-[#000000]; }
+  .text-ds-black { @apply text-[#000000]; }
+  .border-ds-black { @apply border-[#000000]; }
+
+  .bg-ds-white { @apply bg-[#FFFFFF]; }
+  .text-ds-white { @apply text-[#FFFFFF]; }
+  .border-ds-white { @apply border-[#FFFFFF]; }
+
+  .bg-ds-disabled { @apply bg-[#BABABA]; }
+  .text-ds-disabled { @apply text-[#BABABA]; }
+  .border-ds-disabled { @apply border-[#BABABA]; }
+
+  .bg-ds-disabled-text { @apply bg-[#EEEEEE]; }
+  .text-ds-disabled-text { @apply text-[#EEEEEE]; }
+  .border-ds-disabled-text { @apply border-[#EEEEEE]; }
+
+  .bg-ds-grey { @apply bg-[#EBF0F5]; }
+  .text-ds-grey { @apply text-[#EBF0F5]; }
+  .border-ds-grey { @apply border-[#EBF0F5]; }
+
+  /* Gradients */
+  .bg-ds-gradient-bold { @apply bg-gradient-to-b from-[#E64B00] via-[#F57A20] via-[#F59B43] via-[#F5BC6F] via-[#3AA2DC] via-[#61BADB] via-[#3AA2DC] to-[#1B83DB]; }
+  
+  .bg-ds-gradient-soft { @apply bg-gradient-to-b from-[#E64B00] via-[#F57A20] via-[#F59B43] via-[#F5BC6F] via-[#F5D4A5] via-[#F2DFD4] via-[#EBF0F5] via-[#C5DEF5] via-[#8ACADA] via-[#61BADB] via-[#3AA2DC] to-[#1B83DB]; }
+}
+
+/* Typography Classes */
+@layer components {
+  /* Desktop Typography (768px+) */
+  .ds-heading-1 {
+    @apply text-5xl font-black leading-[120%] md:text-5xl;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+  }
+
+  .ds-heading-2 {
+    @apply text-4xl font-black leading-[125%] md:text-4xl;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+  }
+
+  .ds-heading-3 {
+    @apply text-3xl font-bold leading-[130%] md:text-3xl;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+  }
+
+  .ds-heading-4 {
+    @apply text-2xl font-bold leading-[135%] md:text-2xl;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+  }
+
+  .ds-body-large {
+    @apply text-lg font-normal leading-[150%] md:text-lg;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+  }
+
+  .ds-body-large-bold {
+    @apply text-lg font-bold leading-[150%] md:text-lg;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+  }
+
+  .ds-body-small {
+    @apply text-base font-normal leading-[150%] md:text-base;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+  }
+
+  .ds-body-small-bold {
+    @apply text-base font-bold leading-[150%] md:text-base;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+  }
+
+  .ds-small-text {
+    @apply text-sm font-normal leading-[145%] md:text-sm;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+  }
+
+  .ds-cta {
+    @apply text-base font-medium leading-[120%] md:text-base;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+  }
+
+  /* Mobile Typography (below 768px) */
+  @media (max-width: 767px) {
+    .ds-heading-1 {
+      @apply text-4xl;
+      font-weight: 600;
+    }
+
+    .ds-heading-2 {
+      @apply text-3xl;
+      font-weight: 600;
+    }
+
+    .ds-heading-3 {
+      @apply text-2xl;
+      font-weight: 600;
+    }
+
+    .ds-heading-4 {
+      @apply text-lg;
+      font-weight: 600;
+    }
+
+    .ds-body-large {
+      @apply text-base;
+    }
+
+    .ds-body-large-bold {
+      @apply text-base;
+    }
+
+    .ds-body-small {
+      @apply text-sm;
+      leading: 145%;
+    }
+
+    .ds-body-small-bold {
+      @apply text-sm;
+      leading: 145%;
+    }
+
+    .ds-small-text {
+      @apply text-xs;
+      leading: 140%;
+    }
+  }
+
+  /* Event Card Date - Special case */
+  .ds-event-date {
+    @apply text-base font-semibold leading-[100%] md:text-base;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+  }
+}
+
+/* Spacing Classes */
+@layer utilities {
+  /* Custom spacing scale */
+  .space-ds-3xl { @apply space-y-16; } /* 64px */
+  .space-ds-2xl { @apply space-y-12; } /* 48px */
+  .space-ds-xl { @apply space-y-8; }   /* 32px */
+  .space-ds-lg { @apply space-y-6; }   /* 24px */
+  .space-ds-md { @apply space-y-4; }   /* 16px */
+  .space-ds-sm { @apply space-y-3; }   /* 12px */
+  .space-ds-xs { @apply space-y-2; }   /* 8px */
+  .space-ds-2xs { @apply space-y-1; }  /* 4px */
+
+  /* Margin spacing */
+  .m-ds-3xl { @apply m-16; }
+  .m-ds-2xl { @apply m-12; }
+  .m-ds-xl { @apply m-8; }
+  .m-ds-lg { @apply m-6; }
+  .m-ds-md { @apply m-4; }
+  .m-ds-sm { @apply m-3; }
+  .m-ds-xs { @apply m-2; }
+  .m-ds-2xs { @apply m-1; }
+
+  /* Margin top */
+  .mt-ds-3xl { @apply mt-16; }
+  .mt-ds-2xl { @apply mt-12; }
+  .mt-ds-xl { @apply mt-8; }
+  .mt-ds-lg { @apply mt-6; }
+  .mt-ds-md { @apply mt-4; }
+  .mt-ds-sm { @apply mt-3; }
+  .mt-ds-xs { @apply mt-2; }
+  .mt-ds-2xs { @apply mt-1; }
+
+  /* Margin bottom */
+  .mb-ds-3xl { @apply mb-16; }
+  .mb-ds-2xl { @apply mb-12; }
+  .mb-ds-xl { @apply mb-8; }
+  .mb-ds-lg { @apply mb-6; }
+  .mb-ds-md { @apply mb-4; }
+  .mb-ds-sm { @apply mb-3; }
+  .mb-ds-xs { @apply mb-2; }
+  .mb-ds-2xs { @apply mb-1; }
+
+  /* Padding spacing */
+  .p-ds-3xl { @apply p-16; }
+  .p-ds-2xl { @apply p-12; }
+  .p-ds-xl { @apply p-8; }
+  .p-ds-lg { @apply p-6; }
+  .p-ds-md { @apply p-4; }
+  .p-ds-sm { @apply p-3; }
+  .p-ds-xs { @apply p-2; }
+  .p-ds-2xs { @apply p-1; }
+
+  /* Gap spacing for flexbox/grid */
+  .gap-ds-3xl { @apply gap-16; }
+  .gap-ds-2xl { @apply gap-12; }
+  .gap-ds-xl { @apply gap-8; }
+  .gap-ds-lg { @apply gap-6; }
+  .gap-ds-md { @apply gap-4; }
+  .gap-ds-sm { @apply gap-3; }
+  .gap-ds-xs { @apply gap-2; }
+  .gap-ds-2xs { @apply gap-1; }
+}
+
+/* Usage Comments */
+/*
+SPACING USAGE GUIDE:
+- spacing 3xl (64px): Full bleeding sections, gallery spacing, large layout breathing
+- spacing 2xl (48px): Page paddings or major vertical breaks
+- spacing xl (32px): Gaps between major sections or hero elements
+- spacing lg (24px): Standard block spacing between sections or components
+- spacing md (16px): Base space between form elements, cards, etc.
+- spacing sm (12px): Inner padding in buttons, compact UI
+- spacing xs (8px): Between text lines, labels, or tiny UI details
+- spacing 2xs (4px): Tight spacing: icons, badges, dividers
+
+COLOR USAGE:
+- Use .bg-ds-[color], .text-ds-[color], .border-ds-[color] for consistent theming
+- Gradients available: .bg-ds-gradient-bold and .bg-ds-gradient-soft
+
+TYPOGRAPHY USAGE:
+- Mobile-first approach with responsive breakpoints at 768px
+- Use .ds-heading-[1-4] for hierarchical headings
+- Use .ds-body-[large|small] for body text with optional -bold variants
+- Use .ds-small-text for captions and small details
+- Use .ds-cta for call-to-action buttons
+- Use .ds-event-date for special date formatting
+*/

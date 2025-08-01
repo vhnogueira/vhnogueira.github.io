@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/output.css" />
+  </head>
+  <body>
+    <!-- Hero Section with Video -->
+    <section id="hero" class="relative w-full overflow-hidden">
+      <video
+        class="w-full h-auto"
+        autoplay
+        muted
+        loop
+      >
+        <source src="/waterfall-video-preview/video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <section id="save-the-date" class="py-24">
+      <div class="max-w-[1140px] mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h1 class="text-6xl font-black leading-[120%] md:text-6xl" style="font-family: 'Inter', sans-serif;">Save<br><span class="font-normal">the Dates</span></h1>
+          </div>
+          <div>
+            <p class="ds-body-large mb-ds-md">
+              Over two action-packed weekends (Sept 27–28 | Oct 4–5),
+              Toronto's waterfront will come alive, and you can experience the
+              magic of creativity, culture, and community! Presented by a
+              coalition of waterfront partners, the Water/Fall Festival offers
+              a lineup of vibrant food and maker markets, live music,
+              interactive art, and more.
+            </p>
+
+            <p class="ds-body-large"><strong>More info coming soon.</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
