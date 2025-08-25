@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victor Hugo Nogueira de Castro - Web Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap');
+        
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #0ea5e9 #0f172a;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #0ea5e9;
+            border-radius: 4px;
+        }
+        
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+        }
+        
+        .font-orbitron {
+            font-family: 'Orbitron', monospace;
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 5px #0ea5e9, 0 0 10px #0ea5e9, 0 0 15px #0ea5e9, 0 0 20px #0ea5e9;
+        }
+        
+        .neon-border {
+            box-shadow: 0 0 5px #0ea5e9, 0 0 10px #0ea5e9, 0 0 15px #0ea5e9;
+            border: 1px solid #0ea5e9;
+        }
+        
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.3), 0 0 40px rgba(14, 165, 233, 0.2), 0 0 60px rgba(14, 165, 233, 0.1);
+        }
+        
+        .cyber-grid {
+            background-image: 
+                linear-gradient(rgba(14, 165, 233, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(14, 165, 233, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .pulse-neon {
+            animation: pulse-neon 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pulse-neon {
+            from {
+                text-shadow: 0 0 5px #0ea5e9, 0 0 10px #0ea5e9, 0 0 15px #0ea5e9, 0 0 20px #0ea5e9;
+            }
+            to {
+                text-shadow: 0 0 2px #0ea5e9, 0 0 5px #0ea5e9, 0 0 8px #0ea5e9, 0 0 12px #0ea5e9, 0 0 15px #0ea5e9;
+            }
+        }
+        
+        .tech-card {
+            background: linear-gradient(145deg, #1e293b, #334155);
+            transition: all 0.3s ease;
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+        }
+        
+        .project-card {
+            background: linear-gradient(145deg, #1e293b, #334155);
+            border: 1px solid rgba(14, 165, 233, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: #0ea5e9;
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+        }
+        
+        
+        @media (max-width: 768px) {
+            .cyber-grid {
+                background-size: 25px 25px;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-900 text-white cyber-grid">
+    
+    <!-- Header/Nav -->
+    <nav class="fixed top-0 w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-blue-500/30">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="font-orbitron text-xl font-bold neon-text">{'<VH/>'}</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-blue-400 transition-colors">Início</a>
+                    <a href="#about" class="hover:text-blue-400 transition-colors">Sobre</a>
+                    <a href="#tech" class="hover:text-blue-400 transition-colors">Tecnologias</a>
+                    <a href="#projects" class="hover:text-blue-400 transition-colors">Projetos</a>
+                    <a href="#contact" class="hover:text-blue-400 transition-colors">Contato</a>
+                </div>
+                <!-- Mobile menu button -->
+                <button class="md:hidden text-blue-400" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="#home" class="hover:text-blue-400 transition-colors py-2">Início</a>
+                    <a href="#about" class="hover:text-blue-400 transition-colors py-2">Sobre</a>
+                    <a href="#tech" class="hover:text-blue-400 transition-colors py-2">Tecnologias</a>
+                    <a href="#projects" class="hover:text-blue-400 transition-colors py-2">Projetos</a>
+                    <a href="#contact" class="hover:text-blue-400 transition-colors py-2">Contato</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-transparent to-purple-500/10"></div>
+        <div class="text-center z-10 px-6">
+            <div class="floating">
+                <h1 class="font-orbitron text-4xl sm:text-6xl md:text-8xl font-black mb-4 pulse-neon">
+                    VICTOR HUGO
+                </h1>
+                <h2 class="font-orbitron text-xl sm:text-2xl md:text-4xl font-bold text-blue-400 mb-6">
+                    NOGUEIRA DE CASTRO
+                </h2>
+            </div>
+            <p class="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Web Developer & Digital Architect
+            </p>
+            <div class="text-base sm:text-lg text-blue-300 mb-12">
+                📍 Florianópolis, Brasil
+            </div>
+            <a href="#projects" class="inline-block px-6 sm:px-8 py-3 sm:py-4 neon-border rounded-lg text-blue-400 font-semibold hover:bg-blue-500/10 transition-all duration-300 font-orbitron text-sm sm:text-base">
+                EXPLORAR PROJETOS
+            </a>
+        </div>
+        
+        <!-- Geometric shapes -->
+        <div class="absolute top-20 right-10 sm:right-20 w-24 sm:w-32 h-24 sm:h-32 border border-blue-500/30 rotate-45 floating"></div>
+        <div class="absolute bottom-20 left-10 sm:left-20 w-16 sm:w-24 h-16 sm:h-24 border border-purple-500/30 rotate-12 floating" style="animation-delay: 1s;"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="font-orbitron text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-16 neon-text">
+                SOBRE MIM
+            </h2>
+            <div class="bg-slate-800/50 rounded-lg p-6 sm:p-8 neon-border">
+                <p class="text-base sm:text-lg text-gray-300 leading-relaxed text-center">
+                    Desenvolvedor web apaixonado por criar experiências digitais inovadoras e funcionais. 
+                    Com expertise em tecnologias modernas, transformo ideias em soluções web robustas e escaláveis. 
+                    Baseado em Florianópolis, trabalho com projetos que conectam design moderno com performance otimizada.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="tech" class="py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="font-orbitron text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-16 neon-text">
+                TECNOLOGIAS
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 max-w-6xl mx-auto">
+                <div class="tech-card p-4 sm:p-6 rounded-lg text-center">
+                    <div class="text-2xl sm:text-3xl mb-2 sm:mb-3">🎨</div>
+                    <div class="font-orbitron font-semibold text-blue-400 text-sm sm:text-base">WordPress</div>
+                </div>
+                <div class="tech-card p-4 sm:p-6 rounded-lg text-center">
+                    <div class="text-2xl sm:text-3xl mb-2 sm:mb-3">🎭</div>
+                    <div class="font-orbitron font-semibold text-blue-400 text-sm sm:text-base">Tailwind</div>
+                </div>
+                <div class="tech-card p-4 sm:p-6 rounded-lg text-center">
+                    <div class="text-2xl sm:text-3xl mb-2 sm:mb-3">🚀</div>
+                    <div class="font-orbitron font-semibold text-blue-400 text-sm sm:text-base">Bootstrap</div>
+                </div>
+                <div class="tech-card p-4 sm:p-6 rounded-lg text-center">
+                    <div class="text-2xl sm:text-3xl mb-2 sm:mb-3">⚛️</div>
+                    <div class="font-orbitron font-semibold text-blue-400 text-sm sm:text-base">React</div>
+                </div>
+                <div class="tech-card p-4 sm:p-6 rounded-lg text-center">
+                    <div class="text-2xl sm:text-3xl mb-2 sm:mb-3">🔥</div>
+                    <div class="font-orbitron font-semibold text-blue-400 text-sm sm:text-base">Next.js</div>
+                </div>
+                <div class="tech-card p-4 sm:p-6 rounded-lg text-center">
+                    <div class="text-2xl sm:text-3xl mb-2 sm:mb-3">💚</div>
+                    <div class="font-orbitron font-semibold text-blue-400 text-sm sm:text-base">Node.js</div>
+                </div>
+                <div class="tech-card p-4 sm:p-6 rounded-lg text-center">
+                    <div class="text-2xl sm:text-3xl mb-2 sm:mb-3">🐘</div>
+                    <div class="font-orbitron font-semibold text-blue-400 text-sm sm:text-base">PostgreSQL</div>
+                </div>
+                <div class="tech-card p-4 sm:p-6 rounded-lg text-center">
+                    <div class="text-2xl sm:text-3xl mb-2 sm:mb-3">🗄️</div>
+                    <div class="font-orbitron font-semibold text-blue-400 text-sm sm:text-base">MySQL</div>
+                </div>
+                <div class="tech-card p-4 sm:p-6 rounded-lg text-center">
+                    <div class="text-2xl sm:text-3xl mb-2 sm:mb-3">🔥</div>
+                    <div class="font-orbitron font-semibold text-blue-400 text-sm sm:text-base">Firebase</div>
+                </div>
+                <div class="tech-card p-4 sm:p-6 rounded-lg text-center">
+                    <div class="text-2xl sm:text-3xl mb-2 sm:mb-3">🐘</div>
+                    <div class="font-orbitron font-semibold text-blue-400 text-sm sm:text-base">PHP</div>
+                </div>
+                <div class="tech-card p-4 sm:p-6 rounded-lg text-center">
+                    <div class="text-2xl sm:text-3xl mb-2 sm:mb-3">🌐</div>
+                    <div class="font-orbitron font-semibold text-blue-400 text-sm sm:text-base">HTML</div>
+                </div>
+                <div class="tech-card p-4 sm:p-6 rounded-lg text-center">
+                    <div class="text-2xl sm:text-3xl mb-2 sm:mb-3">⚡</div>
+                    <div class="font-orbitron font-semibold text-blue-400 text-sm sm:text-base">JavaScript</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="font-orbitron text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-16 neon-text">
+                PROJETOS
+            </h2>
+            <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
+                
+                <!-- Projeto 1 - Lobo e Vaz Advogados -->
+                <div class="project-card rounded-lg overflow-hidden neon-glow">
+                    <div class="h-72 overflow-hidden">
+                        <img src="src/img/loboevaz.jpg" alt="Lobo e Vaz Advogados" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="font-orbitron text-lg sm:text-xl font-bold text-blue-400 mb-3">Lobo e Vaz Advogados</h3>
+                        <p class="text-gray-300 mb-4 text-sm sm:text-base">
+                            Site completo para escritório de advocacia com WordPress, Bootstrap e ACF. Portfolio completo de serviços jurídicos com design profissional.
+                        </p>
+                        <div class="text-xs text-blue-300 mb-4">WordPress • Bootstrap • ACF</div>
+                        <div class="flex gap-2">
+                            <a href="http://loboevaz.com.br/" target="_blank" class="px-3 sm:px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors text-xs sm:text-sm">
+                                Ver Projeto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 2 - BeChildren -->
+                <div class="project-card rounded-lg overflow-hidden neon-glow">
+                    <div class="h-72 overflow-hidden">
+                        <img src="src/img/bechildren.jpg" alt="BeChildren Clínica" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="font-orbitron text-lg sm:text-xl font-bold text-blue-400 mb-3">BeChildren Clínica</h3>
+                        <p class="text-gray-300 mb-4 text-sm sm:text-base">
+                            Clínica multidisciplinar de saúde e bem-estar infantil em Florianópolis com WordPress, Bootstrap e ACF. Ambiente lúdico e acolhedor.
+                        </p>
+                        <div class="text-xs text-blue-300 mb-4">WordPress • Bootstrap • ACF</div>
+                        <div class="flex gap-2">
+                            <a href="https://bechildren.com.br/" target="_blank" class="px-3 sm:px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors text-xs sm:text-sm">
+                                Ver Projeto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 3 - Water/Fall Festival -->
+                <div class="project-card rounded-lg overflow-hidden neon-glow">
+                    <div class="h-72 overflow-hidden">
+                        <img src="src/img/waterfall.jpg" alt="Water/Fall Festival" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="font-orbitron text-lg sm:text-xl font-bold text-blue-400 mb-3">Water/Fall Festival</h3>
+                        <p class="text-gray-300 mb-4 text-sm sm:text-base">
+                            Site oficial do festival de eventos em Toronto com WordPress, Tailwind CSS e ACF. Design moderno com vídeos e animações.
+                        </p>
+                        <div class="text-xs text-blue-300 mb-4">WordPress • Tailwind • ACF</div>
+                        <div class="flex gap-2">
+                            <a href="https://waterfallfestival.ca/" target="_blank" class="px-3 sm:px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors text-xs sm:text-sm">
+                                Ver Projeto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 4 - Island Wide Speech -->
+                <div class="project-card rounded-lg overflow-hidden neon-glow">
+                    <div class="h-72 overflow-hidden">
+                        <img src="src/img/islandwidespeech.jpg" alt="Island Wide Speech" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="font-orbitron text-lg sm:text-xl font-bold text-blue-400 mb-3">Island Wide Speech</h3>
+                        <p class="text-gray-300 mb-4 text-sm sm:text-base">
+                            Site para clínica de fonoaudiologia em Long Island com WordPress, Bootstrap e ACF.
+                        </p>
+                        <div class="text-xs text-blue-300 mb-4">WordPress • Bootstrap • ACF</div>
+                        <div class="flex gap-2">
+                            <a href="https://www.islandwidespeech.com/" target="_blank" class="px-3 sm:px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors text-xs sm:text-sm">
+                                Ver Projeto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="font-orbitron text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-16 neon-text">
+                CONTATO
+            </h2>
+            <div class="bg-slate-800/50 rounded-lg p-6 sm:p-8 neon-border">
+                <div class="space-y-8">
+                    <!-- Mobile: Stack all items vertically, Desktop: 2 columns -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                        <div class="space-y-6">
+                            <!-- Email -->
+                            <div class="flex items-center gap-4">
+                                <div class="flex-shrink-0 w-8 h-8 flex items-center justify-center">
+                                    <div class="text-xl sm:text-2xl">📧</div>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="font-orbitron font-semibold text-blue-400 text-sm sm:text-base">Email</div>
+                                    <a href="mailto:vhncastro@gmail.com" class="text-gray-300 hover:text-blue-400 transition-colors text-sm sm:text-base break-all">
+                                        vhncastro@gmail.com
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- WhatsApp -->
+                            <div class="flex items-center gap-4">
+                                <div class="flex-shrink-0 w-8 h-8 flex items-center justify-center">
+                                    <div class="text-xl sm:text-2xl">💬</div>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="font-orbitron font-semibold text-blue-400 text-sm sm:text-base">WhatsApp</div>
+                                    <a href="https://wa.me/5548999605114" target="_blank" class="text-gray-300 hover:text-blue-400 transition-colors text-sm sm:text-base">
+                                        +55 (48) 99960-5114
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <!-- Localização -->
+                            <div class="flex items-center gap-4">
+                                <div class="flex-shrink-0 w-8 h-8 flex items-center justify-center">
+                                    <div class="text-xl sm:text-2xl">📍</div>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="font-orbitron font-semibold text-blue-400 text-sm sm:text-base">Localização</div>
+                                    <div class="text-gray-300 text-sm sm:text-base">Florianópolis, Brasil</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Status -->
+                            <div class="flex items-center gap-4">
+                                <div class="flex-shrink-0 w-8 h-8 flex items-center justify-center">
+                                    <div class="text-xl sm:text-2xl">🌐</div>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="font-orbitron font-semibold text-blue-400 text-sm sm:text-base">Status</div>
+                                    <div class="text-green-400 text-sm sm:text-base">Disponível para projetos</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 pt-8 border-t border-blue-500/30 text-center">
+                    <p class="text-gray-300 text-base sm:text-lg">
+                        Vamos construir algo incrível juntos! 🚀
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 border-t border-blue-500/30">
+        <div class="container mx-auto text-center">
+            <div class="font-orbitron text-blue-400 mb-2 text-sm sm:text-base">Victor Hugo Nogueira de Castro</div>
+            <div class="text-gray-500 text-xs sm:text-sm">© 2025 - Desenvolvido com 💙 em Florianópolis</div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    mobileMenu.classList.add('hidden');
+                    
+                    // Smooth scroll to target
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add parallax effect to hero section (only on desktop)
+        if (window.innerWidth > 768) {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const hero = document.querySelector('#home');
+                if (hero) {
+                    hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+                }
+            });
+        }
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-slate-900/95');
+            } else {
+                nav.classList.remove('bg-slate-900/95');
+                nav.classList.add('bg-slate-900/80');
+            }
+        });
+    </script>
+</body>
+</html>
